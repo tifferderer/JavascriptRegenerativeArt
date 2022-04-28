@@ -1,46 +1,34 @@
-//Using random sizes to generate a random
-//square.
-let squareSize;
-let lineWidth = 2;
-let spacing = 0;
 
-let tempsOfSeattle = [50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,3450,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,50,52,52,50,38,42,50,46,26,34,
-    50,52,52,50,38,42,50,46,26,34,20,20,20,20,20,20,20,20,20,20]
-
-let lessTemp = [20, 40, 35, 25, 10, 68];
+//Highs of Seattle 2020
+let tempsOfSeattle2020 = [53,50,62,48,48,51,55,48,39,44,46,] //Stopped at Jan 11 2020
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(1470, 735);
+    background(0); //set background on grey scale
+
+    let spacing = 0;
+    for (let i = 0; i < tempsOfSeattle.length; i++) {
+        chain(spacing, colorScheme(tempsOfSeattle[i]));
+        spacing+=4;
+    }
+
 }
 
 function draw() {
-    background(0); //set background on grey scale
-
-    for (let i = 0; i < tempsOfSeattle.length; i++) {
-        chain(i, colorScheme(tempsOfSeattle[i]));
-    }
 }
 
-function chain(yAxis, color) {
-    strokeWeight(lineWidth);  //border
+function chain(xAxis, color) {
+    strokeWeight(1.5);  //border
 
     //set colors of chain border
     stroke(color[0],color[1],color[2]);
     noFill();
-    for (let i = 0; i <= width ; i += 8) {
-        circle(i, yAxis, 5);
+    for (let i = 0; i <= width ; i += 7) {
+        circle(xAxis, i, 5);
     }
 }
 
-function colorScheme(temp) {
+function colorScheme(temp) {  //TODO: Choose colors & Scale ratio
     if(temp < 10) {
         return  [100,100,255];
     }
