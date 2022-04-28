@@ -1,5 +1,6 @@
 
 //Highs of Seattle 2020
+//https://weatherspark.com/h/d/145236/2020/1/11/Historical-Weather-on-Saturday-January-11-2020-at-Seattle-Tacoma-International-Airport-Washington-United-States
 let tempsOfSeattle2020 = [53,50,62,48,48,51,55,48,39,44,46,] //Stopped at Jan 11 2020
 
 function setup() {
