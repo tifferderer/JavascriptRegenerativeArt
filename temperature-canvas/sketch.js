@@ -14,9 +14,9 @@ let tempsOfSeattle2020 = [53,50,62,48,48,51,54,45,39,44,46,44,37,35,46,45,42,51,
                           72,72,58,59,67,72,60,65,67,61,58,61,63,63,60,62,58,63,59,58,52,53,50,49,49,52,57,55,59,59,57,
                           59,65,58,66,60,50,43,48,43,46,46,49,51,48,52,50,61,48,47,50,53,45,47,52,48,50,50,47,44,51,
                           48,59,49,54,57,54,52,51,49,44,46,44,45,50,48,50,50,51,53,54,58,45,43,44,49,50,47,47,41,50,49
-]
+                            ] //low: 35 high:97
 function setup() {
-    createCanvas(1470, 735);
+    createCanvas(1462, 735);
     background(0); //set background on grey scale
 
     let spacing = 0;
@@ -37,31 +37,38 @@ function chain(xAxis, color) {
     stroke(color[0],color[1],color[2]);
     noFill();
     for (let i = 0; i <= width ; i += 7) {
+        //fill(color);
         circle(xAxis, i, 5);
     }
 }
 
 function colorScheme(temp) {  //TODO: Choose colors & Scale ratio
-    if(temp < 10) {
-        return  [100,100,255];
+    if(temp < (35 + 6)) {
+        return  [87, 117, 144];
     }
-    if(temp < 20) {
-        return  [100,100,220];
+    if(temp < 47) {
+        return  [39, 125,161];
     }
-    if(temp < 30) {
-        return  [100,120,200];
-    }
-    if(temp < 40) {
-        return  [140,120,190];
-    }
-    if(temp < 50) {
-        return  [150,110,160];
+    if(temp < 53) {
+        return  [77, 144, 142];
     }
     if(temp < 60) {
-        return  [170,100,120];
+        return  [67, 170, 139];
     }
-    if(temp < 70) {
-        return  [200,100,100];
+    if(temp < 66) {
+        return  [144, 190, 109];
     }
-    return [0,0,0]
+    if(temp < 72) {
+        return  [249, 244, 113];
+    }
+    if(temp < 78) {
+        return  [248, 164, 30];
+    }
+    if(temp < 84) {
+        return  [243, 114, 44];
+    }
+    if(temp < 90) {
+        return  [249, 132, 74];
+    }
+    return [255,65,68]
 }
