@@ -1,11 +1,11 @@
 
 function setup() {
-    createCanvas(1462, 735);
+    createCanvas(1459, 735);
     background(0); //set background on grey scale
 
     let spacing = 0;
-    for (let i = 0; i < tempsOfSeattle2020.length; i++) {
-        chain(spacing, colorScheme(tempsOfSeattle2020[i], 35, 97));
+    for (let i = 0; i < tempsOfNewYork2018.length; i++) {
+        chain(spacing, colorScheme(tempsOfNewYork2018[i], 14, 97));
         spacing+=4;
     }
 }
