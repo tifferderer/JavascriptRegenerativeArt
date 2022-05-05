@@ -1,18 +1,12 @@
-let tempsOfYear = [];
-for (let i = 0; i < 365; i++) {
-   let temp =results[i].value;
-   temp = temp/10*1.8+32;
-   tempsOfYear[i] = temp;
-}
-console.log(tempsOfYear);
-
 function setup() {
     createCanvas(1459, 735);
     background(0); //set background on grey scale
 
     let spacing = 0;
-    for (let i = 0; i < tempsOfNewYork2018.length; i++) {
-        chain(spacing, colorScheme(tempsOfNewYork2018[i], 14, 97));
+    let data = readData(la2015);        //SET JSON DATA FILE HERE
+
+    for (let i = 0; i < data.length; i++) {
+        chain(spacing, colorScheme(data[i], Math.min(...data), Math.max(...data)));
         spacing+=4;
     }
 }
@@ -69,4 +63,14 @@ function colorScheme(temp, low, high) {
         return  [249, 132, 74];
     }
     return [255,65,68]
+}
+
+function readData(postmanData) {
+    let tempsOfYear = [];
+    for (let i = 0; i < 365; i++) {
+        let temp =postmanData[i].value;
+        temp = temp/10*1.8+32;
+        tempsOfYear[i] = temp;
+    }
+    return (tempsOfYear);
 }
