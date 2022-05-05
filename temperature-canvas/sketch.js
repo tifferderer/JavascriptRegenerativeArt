@@ -1,3 +1,10 @@
+let tempsOfYear = [];
+for (let i = 0; i < 365; i++) {
+   let temp =results[i].value;
+   temp = temp/10*1.8+32;
+   tempsOfYear[i] = temp;
+}
+console.log(tempsOfYear);
 
 function setup() {
     createCanvas(1459, 735);
