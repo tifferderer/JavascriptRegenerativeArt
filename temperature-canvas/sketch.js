@@ -3,7 +3,7 @@ function setup() {
     background(0); //set background on grey scale
 
     let spacing = 0;
-    let data = readData(miami2015);        //SET JSON DATA FILE HERE
+    let data = readData(nashville2016);        //SET JSON DATA FILE HERE
 
     for (let i = 0; i < data.length; i++) {
         chain(spacing, colorScheme(data[i], Math.min(...data), Math.max(...data)));
@@ -67,7 +67,7 @@ function colorScheme(temp, low, high) {
 
 function readData(postmanData) {
     let tempsOfYear = [];
-    for (let i = 0; i < 365; i++) {
+    for (let i = 0; i < postmanData.length; i++) {
         let temp =postmanData[i].value;
         temp = temp/10*1.8+32;
         tempsOfYear[i] = temp;
