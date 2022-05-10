@@ -3,7 +3,7 @@ function setup() {
     background(0); //set background on grey scale
 
     let spacing = 0;
-    let data = readData(denver2019);        //SET JSON DATA FILE HERE
+    let data = readData(anchorage2008);        //SET JSON DATA FILE HERE
 
     for (let i = 0; i < data.length; i++) {
         chain(spacing, colorScheme(data[i], Math.min(...data), Math.max(...data)));
