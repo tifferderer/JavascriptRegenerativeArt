@@ -1,5 +1,4 @@
-
-    var anchorage2008 = [
+var locationData = [
     {
         "date": "2008-01-01T00:00:00",
         "datatype": "TMAX",

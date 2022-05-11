@@ -1,5 +1,4 @@
-
-  var miami2015 = [
+var locationData = [
     {
         "date": "2015-01-01T00:00:00",
         "datatype": "TMAX",

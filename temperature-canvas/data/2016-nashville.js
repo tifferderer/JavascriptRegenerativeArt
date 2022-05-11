@@ -1,4 +1,4 @@
-var nashville2016 = [
+var locationData = [
     {
         "date": "2016-01-01T00:00:00",
         "datatype": "TMAX",
