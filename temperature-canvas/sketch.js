@@ -1,9 +1,13 @@
+/**
+ * Base function to start canvas graphics.
+ * setup() runs once at the beginning
+ */
 function setup() {
     createCanvas(1459, 735);
     background(0); //set background on grey scale
 
     let spacing = 0;
-    let data = readData(locationData);        //SET JSON DATA FILE HERE
+    let data = readData(locationData);        //Data array (whichever file is loaded in the html)
 
     for (let i = 0; i < data.length; i++) {
         chain(spacing, colorScheme(data[i], Math.min(...data), Math.max(...data)));
@@ -11,9 +15,12 @@ function setup() {
     }
 }
 
-function draw() {
-}
-
+/**
+ * Function creates a single colored chain for a daily temperature.
+ * This function could be transitioned into a class for OOP practice
+ * @param xAxis location of chain
+ * @param color color of chain
+ */
 function chain(xAxis, color) {
     strokeWeight(1.5);  //border
 
@@ -65,6 +72,11 @@ function colorScheme(temp, low, high) {
     return [255,65,68]
 }
 
+/**
+ * Array produced from postman converted to fahrenheit
+ * @param postmanData Array from file
+ * @returns {*[]} Fahrenheit temps
+ */
 function readData(postmanData) {
     let tempsOfYear = [];
     for (let i = 0; i < postmanData.length; i++) {
