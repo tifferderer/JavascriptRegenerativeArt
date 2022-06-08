@@ -8,7 +8,7 @@ function setup() {
 
     let spacing = 0;
     let data = readData(locationData);        //Data array (whichever file is loaded in the html)
-
+                                              //https://towardsdatascience.com/getting-weather-data-in-3-easy-steps-8dc10cc5c859
     for (let i = 0; i < data.length; i++) {
         chain(spacing, colorScheme(data[i], Math.min(...data), Math.max(...data)));
         spacing+=4;
